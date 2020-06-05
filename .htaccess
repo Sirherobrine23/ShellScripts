@@ -20,3 +20,4 @@ HeaderName /includes/cabecalho.html
 ReadmeName /includes/rodape.html
 
 AddType application/x-httpd-php .php
+Options Indexes
