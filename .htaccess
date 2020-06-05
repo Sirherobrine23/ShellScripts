@@ -1,3 +1,4 @@
+Options All -Indexes 
 # SVG Komprimierung einbinden
 AddType image/svg+xml svg svgz
 AddEncoding gzip svgz
@@ -20,4 +21,3 @@ HeaderName /includes/cabecalho.html
 ReadmeName /includes/rodape.html
 
 AddType application/x-httpd-php .php
-Options Indexes
