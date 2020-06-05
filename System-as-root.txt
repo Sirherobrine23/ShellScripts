@@ -1,9 +1,3 @@
-#!/bin/bash
-
-ui_print(){
-  echo "$1"
-}
-
 if [ -d /system/system ];then
     ui_print "Seu sistema é system_as_root"
     SYSTEM=/system/system
