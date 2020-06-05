@@ -1,0 +1,22 @@
+# SVG Komprimierung einbinden
+AddType image/svg+xml svg svgz
+AddEncoding gzip svgz
+
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html
+ErrorDocument 400 /400.html
+ErrorDocument 500 /500.html
+ErrorDocument 501 /404.html
+ErrorDocument 505 /404.html
+
+IndexOptions FancyIndexing VersionSort HTMLTable NameWidth=* SuppressHTMLPreamble
+
+IndexOptions FancyIndexing VersionSort HTMLTable NameWidth=* SuppressHTMLPreamble
+IndexOptions FoldersFirst IconWidth=22 IconHeight=22 Charset=UTF-8 XHTML
+IndexOptions SuppressDescription SuppressColumnSorting IgnoreCase IconsAreLinks
+IndexOptions SuppressRules
+
+HeaderName /includes/cabecalho.html
+ReadmeName /includes/rodape.html
+
+AddType application/x-httpd-php .php
