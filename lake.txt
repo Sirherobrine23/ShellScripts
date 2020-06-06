@@ -1,0 +1,10 @@
+Filesystem                                             1K-blocks     Used Available Use% Mounted on
+/dev/root                                                2897344  2682352    198608  94% /
+tmpfs                                                    1899872      996   1898876   1% /dev
+tmpfs                                                    1899872        0   1899872   0% /mnt
+none                                                     1899872      904   1898968   1% /mnt/phh
+tmpfs                                                    1899872        0   1899872   0% /apex
+/dev/block/platform/soc/c0c4000.sdhci/by-name/vendor_a    888952   656532    216036  76% /vendor
+/dev/block/bootdevice/by-name/fsg_a                         8036     8032         0 100% /vendor/fsg
+/dev/block/bootdevice/by-name/userdata                  51141232 11113432  39880344  22% /data
+/data/media                                             51141232 11113432  39880344  22% /storage/emulated
