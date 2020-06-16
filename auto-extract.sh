@@ -11,9 +11,9 @@ case $FILES in
   ;;
   *.tar.xz )
     sudo apt install -y xz-utils
-    sudo tar -xvf "$(cat ../mame.txt)"
+    sudo tar -xvf "$(cat ../name.txt)"
   ;;
   *.iso )
-    sudo cp "$(cat ../mame.txt)" "$(cat ../mame.txt)_2"
+    sudo cp "$(cat ../name.txt)" "$(cat ../name.txt)-2"
   ;;
 esac
