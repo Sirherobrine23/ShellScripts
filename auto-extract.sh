@@ -9,4 +9,8 @@ case $FILES in
     sudo apt install -y p7zip
     sudo 7z -y x "$FILES"
   ;;
+  *.tar.xz* )
+    sudo apt install -y xz-utils
+    sudo tar -xvf "$(cat ../mame.txt)"
+  ;;
 esac
