@@ -1,10 +1,14 @@
 #!/bin/bash
+sudo apt install unzip zip
 LOCATE="/var/www/html"
 TM="/tmp"
 DATE="$(TZ=UTC+3 date +"%d-%m-%Y-%H-%M-%S")"
-ID="1-0eK1Llv6fVbLvtLYTBAtbGxk6QN6yfo"
-sudo apt install unzip zip
-
+MKDIRID="ID-DA-PASTA-Raiz"
+gdrive mkdir $(echo $DATE) -p "$MKDIRID" >> $TM/ID.txt
+sed -i "s| created||g" "$TM/ID.txt"
+sed -i "s|Directory ||g" "$TM/ID.txt"
+ID="$(cat $TM/ID.txt)"
+cd "$LOCATE"
 for i in $(ls)
 do
     zip "$TM/$i-$DATE.zip" -r "$i";
