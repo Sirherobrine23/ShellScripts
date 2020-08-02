@@ -5,7 +5,7 @@ update_led="10s"
 # Iniciando o loop
 while [ true ]; do 
 # checando a conexão com a interne (http do google.com.br)
-wget -q -o internet-teste --spider http://google.com.br
+wget -q -O internet-status --spider http://google.com.br
 
 if [[ $? -eq 0 ]]; then
   # se haver internet ligara o led
