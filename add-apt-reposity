@@ -1,0 +1,31 @@
+#!/bin/bash
+# SCRIPT add-apt-repository.sh
+if [ $# -eq 1 ] 
+NM=`uname -a && date`;NAME=`echo $NM | md5sum | cut -f1 -d" "`
+then
+    ppa_name=`echo "$1" | cut -d":" -f2 -s`
+    ppa_name_list=`echo "$1" | cut -d"/" -f2 -s`
+    if [ -z "$ppa_name" ]; then
+        echo "PPA name not found"
+        echo "Utility to add PPA repositories in your debian machine"
+        echo "$0 ppa:user/ppa-name"
+    else
+        echo "$ppa_name"
+        echo "deb http://ppa.launchpad.net/$ppa_name/ubuntu bionic main" > /etc/apt/sources.list.d/$ppa_name_list.list
+        echo
+        apt-get update >> /dev/null 2> /tmp/${ppa_name_list}_apt_add_key.txt
+        # NO_PUBKEY 21C6044A875B67B7
+        # Erro GPG: http://ppa.launchpad.net/morphis/anbox-support/ubuntu bionic InRelease: As assinaturas a seguir não puderam ser verificadas devido à chave pública não estar disponível: NO_PUBKEY 21C6044A875B67B7
+        key=`cat /tmp/${ppa_name_list}_apt_add_key.txt | grep 'Erro GPG'|awk '{print $23}' | head -1`
+        apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $key
+        if [ $? = '0' ];then
+            rm -rf /tmp/${ppa_name_list}_apt_add_key.txt
+            apt update
+        else
+            echo "You ppa key not found"
+        fi 
+    fi
+else
+    echo "Utility to add PPA repositories in your debian machine"
+    echo "$0 ppa:user/ppa-name"
+fi
